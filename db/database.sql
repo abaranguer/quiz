@@ -1,0 +1,34 @@
+BEGIN TRANSACTION;
+
+CREATE TABLE "topics_questions" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "id_topic" INTEGER NOT NULL
+);
+
+CREATE TABLE "topics" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL
+);
+
+CREATE TABLE "questions_answers" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "id_question" INTEGER NOT NULL,
+    "id_answer" INTEGER NOT NULL
+);
+
+CREATE TABLE "questions" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "question" TEXT
+);
+
+CREATE TABLE "question_right_answer" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "id_question" INTEGER NOT NULL,
+    "id_right_answer" INTEGER NOT NULL
+);
+
+CREATE TABLE "answers" (
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    "answer" TEXT
+);
+
+COMMIT;
